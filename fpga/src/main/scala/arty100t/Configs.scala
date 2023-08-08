@@ -37,6 +37,13 @@ class RocketArty100TConfig extends Config(
   new chipyard.config.WithPeripheryBusFrequency(50.0) ++  // Match the sbus and pbus frequency
   new chipyard.config.WithBroadcastManager ++ // no l2
   new chipyard.RocketConfig)
+  
+class ARTY100tCCFI extends Config(
+  new WithArty100TTweaks ++
+  new chipyard.config.WithMemoryBusFrequency(50.0) ++
+  new chipyard.config.WithPeripheryBusFrequency(50.0) ++  // Match the sbus and pbus frequency
+  new chipyard.config.WithBroadcastManager ++ // no l2
+  new chipyard.CCFIConfig)
 
 class UART230400RocketArty100TConfig extends Config(
   new WithArty100TUARTTSI(uartBaudRate = 230400) ++
